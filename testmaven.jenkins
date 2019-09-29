@@ -6,7 +6,7 @@ pipeline {
         label 'master'
     }
     tools { 
-        maven 'Maven 3'
+        maven 'maven 3'
         jdk 'jdk8'
     }
     options {
