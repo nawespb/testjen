@@ -9,6 +9,9 @@ pipeline {
         maven 'maven 3'
         jdk 'jdk8'
     }
+    triggers { 
+        pollSCM('* * * * *') 
+    }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
