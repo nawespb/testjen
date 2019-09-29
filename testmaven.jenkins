@@ -16,9 +16,7 @@ pipeline {
     stages {
         stage("build") {
             steps {
-                dir("testjen/maven/"){
-                    sh 'mvn clean verify'
-                }
+                sh 'mvn clean verify'
             }
         }
     }
