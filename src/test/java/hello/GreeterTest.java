@@ -1,7 +1,6 @@
 package hello;
 
 import org.junit.*;
-import static org.junit.Assert.*;
 
 public class GreeterTest {
     
@@ -15,6 +14,12 @@ public class GreeterTest {
     @After
     public void afterTest() {
         greet = null;
+    }
+    
+    @Test
+    public void testPrint() 
+    {
+        System.out.println(greet.sayHello());
     }
       
 }
