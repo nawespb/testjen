@@ -17,10 +17,16 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("build") {
+        stage("compile") {
             steps {
-                sh 'mvn clean verify'
+                sh 'mvn clean compile'
             }
         }
+        stage("tests") {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        
     }
 }
