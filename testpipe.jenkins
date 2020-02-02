@@ -11,14 +11,15 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("First step") {
-            steps {
-                sh 'hostname'
-            }
-        }
-        stage("Second step") {
-            steps {
-                sh 'uptime'
+        stages {
+            stage('Build') {
+                environment { 
+                        AOEU= sh (returnStdout: true, script: 'echo aoeu').trim()
+                    }
+                steps {
+                    sh 'env'
+                    sh 'echo $AOEU'
+                }
             }
         }
     }
